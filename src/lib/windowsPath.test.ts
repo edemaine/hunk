@@ -9,5 +9,7 @@ describe("normalizeWindowsPath", () => {
     expect(normalizeWindowsPath("/c:/work/repo", "win32")).toBe("C:\\work\\repo");
     expect(normalizeWindowsPath("/home/project", "win32")).toBe("/home/project");
     expect(normalizeWindowsPath("/cygdrive/c/work/repo", "linux")).toBe("/cygdrive/c/work/repo");
+    expect(normalizeWindowsPath("C:\\work\\repo", "win32")).toBe("C:\\work\\repo");
+    expect(normalizeWindowsPath("C:/work/repo", "win32")).toBe("C:/work/repo");
   });
 });
