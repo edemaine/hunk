@@ -13,4 +13,23 @@ describe("normalizePathForOS", () => {
     expect(normalizePathForOS("C:\\work\\repo", "win32")).toBe("C:\\work\\repo");
     expect(normalizePathForOS("C:/work/repo", "win32")).toBe("C:/work/repo");
   });
+
+  test("leaves paths unchanged on Unix-like platforms", () => {
+    const paths = [
+      "/cygdrive/c/work/repo",
+      "/c/work/repo",
+      "/mnt/c/work/repo",
+      "/c:/work/repo",
+      "/home/project",
+      "/Users/project",
+      "relative/path",
+      "C:\\work\\repo",
+      "C:/work/repo",
+    ];
+
+    for (const path of paths) {
+      expect(normalizePathForOS(path, "linux")).toBe(path);
+      expect(normalizePathForOS(path, "darwin")).toBe(path);
+    }
+  });
 });
