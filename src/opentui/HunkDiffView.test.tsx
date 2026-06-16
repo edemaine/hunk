@@ -165,6 +165,8 @@ describe("OpenTUI public components", () => {
       "catppuccin-macchiato",
       "catppuccin-mocha",
       "zenburn",
+      "high-contrast-dark",
+      "high-contrast-light",
     ]);
   });
 });

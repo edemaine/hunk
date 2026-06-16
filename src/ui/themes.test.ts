@@ -132,6 +132,41 @@ describe("themes", () => {
     });
   });
 
+  test("resolves high-contrast variants by theme id with strong text contrast", () => {
+    const dark = resolveTheme("high-contrast-dark", null);
+    const light = resolveTheme("high-contrast-light", null);
+
+    expect(dark.id).toBe("high-contrast-dark");
+    expect(dark.label).toBe("High Contrast Dark");
+    expect(dark.appearance).toBe("dark");
+    expect(dark.background).toBe("#000000");
+    expect(dark.text).toBe("#ffffff");
+    expect(hexColorDistance(dark.text, dark.background)).toBeGreaterThan(700);
+    expect(hexColorDistance(dark.addedContentBg, dark.contextBg)).toBeGreaterThan(
+      hexColorDistance(dark.addedBg, dark.contextBg),
+    );
+    expect(hexColorDistance(dark.removedContentBg, dark.contextBg)).toBeGreaterThan(
+      hexColorDistance(dark.removedBg, dark.contextBg),
+    );
+    expect(hexColorDistance(dark.addedContentBg, dark.addedBg)).toBeGreaterThanOrEqual(90);
+    expect(hexColorDistance(dark.removedContentBg, dark.removedBg)).toBeGreaterThanOrEqual(90);
+
+    expect(light.id).toBe("high-contrast-light");
+    expect(light.label).toBe("High Contrast Light");
+    expect(light.appearance).toBe("light");
+    expect(light.background).toBe("#ffffff");
+    expect(light.text).toBe("#000000");
+    expect(hexColorDistance(light.text, light.background)).toBeGreaterThan(700);
+    expect(hexColorDistance(light.addedContentBg, light.contextBg)).toBeGreaterThan(
+      hexColorDistance(light.addedBg, light.contextBg),
+    );
+    expect(hexColorDistance(light.removedContentBg, light.contextBg)).toBeGreaterThan(
+      hexColorDistance(light.removedBg, light.contextBg),
+    );
+    expect(hexColorDistance(light.addedContentBg, light.addedBg)).toBeGreaterThanOrEqual(90);
+    expect(hexColorDistance(light.removedContentBg, light.removedBg)).toBeGreaterThanOrEqual(90);
+  });
+
   test("withTransparentBackground only swaps painted background fields", () => {
     const theme = resolveTheme("graphite", null);
     const transparent = withTransparentBackground(theme);

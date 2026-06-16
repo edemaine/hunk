@@ -206,6 +206,8 @@ describe("ui helpers", () => {
       "Catppuccin Macchiato",
       "Catppuccin Mocha",
       "Zenburn",
+      "High Contrast Dark",
+      "High Contrast Light",
     ]);
     expect(
       menus.theme.some(
@@ -263,6 +265,8 @@ describe("ui helpers", () => {
       "Catppuccin Macchiato",
       "Catppuccin Mocha",
       "Zenburn",
+      "High Contrast Dark",
+      "High Contrast Light",
       "My Theme",
     ]);
     expect(
@@ -537,6 +541,8 @@ describe("ui helpers", () => {
     expect(custom.syntaxColors.keyword).toBe("#123456");
     expect(missingCustom.id).toBe("graphite");
     expect(resolveTheme("ember", null).syntaxStyle).toBeDefined();
+    expect(resolveTheme("high-contrast-dark", null).syntaxStyle).toBeDefined();
+    expect(resolveTheme("high-contrast-light", null).syntaxStyle).toBeDefined();
     expect(custom.syntaxStyle).toBeDefined();
     expect(resolveTheme("catppuccin-latte", null).syntaxStyle).toBeDefined();
     expect(resolveTheme("catppuccin-frappe", null).syntaxStyle).toBeDefined();

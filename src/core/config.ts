@@ -22,6 +22,8 @@ const BUILT_IN_THEME_IDS = [
   "catppuccin-macchiato",
   "catppuccin-mocha",
   "zenburn",
+  "high-contrast-dark",
+  "high-contrast-light",
 ] as const;
 const HEX_COLOR_PATTERN = /^#[0-9a-f]{6}$/i;
 const CUSTOM_THEME_COLOR_KEYS = [

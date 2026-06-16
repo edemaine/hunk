@@ -8,6 +8,7 @@ import {
 } from "./themes/catppuccin";
 import { EMBER_THEME } from "./themes/ember";
 import { GRAPHITE_THEME } from "./themes/graphite";
+import { HIGH_CONTRAST_DARK_THEME, HIGH_CONTRAST_LIGHT_THEME } from "./themes/highContrast";
 import { MIDNIGHT_THEME } from "./themes/midnight";
 import { PAPER_THEME } from "./themes/paper";
 import { withLazySyntaxStyle } from "./themes/syntax";
@@ -29,6 +30,8 @@ export const THEMES: AppTheme[] = [
   CATPPUCCIN_MACCHIATO_THEME,
   CATPPUCCIN_MOCHA_THEME,
   ZENBURN_THEME,
+  HIGH_CONTRAST_DARK_THEME,
+  HIGH_CONTRAST_LIGHT_THEME,
 ];
 
 /** Return the built-in theme by id so config-defined themes can inherit from it. */

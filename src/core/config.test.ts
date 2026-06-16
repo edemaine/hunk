@@ -158,6 +158,8 @@ describe("config resolution", () => {
     "catppuccin-macchiato",
     "catppuccin-mocha",
     "zenburn",
+    "high-contrast-dark",
+    "high-contrast-light",
   ])("accepts custom theme base id: %s", (base) => {
     const home = createTempDir("hunk-config-home-");
     mkdirSync(join(home, ".config", "hunk"), { recursive: true });
@@ -188,7 +190,7 @@ describe("config resolution", () => {
         env: { HOME: home },
       }),
     ).toThrow(
-      "Expected custom_theme.base to be one of: graphite, midnight, paper, ember, catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha, zenburn.",
+      "Expected custom_theme.base to be one of: graphite, midnight, paper, ember, catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha, zenburn, high-contrast-dark, high-contrast-light.",
     );
   });
 
